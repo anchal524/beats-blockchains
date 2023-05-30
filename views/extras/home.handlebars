@@ -1,0 +1,62 @@
+<header>
+    <nav>
+        <img alt="logo" src="/public/images/Beats_Blockchains.png" class="logo">
+        <ul>
+            {{#if authenticated}}
+                <li><a href="/market">Market</a></li>
+                <li><a href="/wallet">Wallet</a></li>
+                <li><a href="/users/logout">Log Out</a></li>
+            {{else}}
+                <li><a href="/users/login">Log In</a></li>
+                <li><a href="/users/signup">Sign Up</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+</header>
+<div class="line"></div>
+{{#unless authorized}}
+    <p>
+        {{#if authenticated}}
+            You are already logged in!
+        {{else}}
+            You must be logged in to access that page.
+        {{/if}}
+    </p>
+{{/unless}}
+<div class="home-body">
+    <div class="home-top">
+        <div class="home-text">
+            <h1>Beats and Blockchains</h1>
+            <p class="home-phrase">Stock Market Trading for the Music Industy</p>
+            <div>
+                <button onclick="window.location.href='/market'" class="buyNow">
+                    Buy Now!
+                </button>
+            </div>
+        </div>
+        <div class="home-rest">    
+            <div class='quotes'>
+                <div class=quote1>
+                    <div class=quote>The Music Industry is a Secret Gold Mine</div>
+                </div>
+                <div class="thin-line"></div>
+                <div class=quote2>
+                    <div class=quote>SWILSS is the new FAANG</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-bottom">
+        <div class="black-desc">
+            <div class="description">
+                <p class="desc-text">
+                    The Stock Market in the Music Industry has become increasingly popular in the modern day. 
+                    Not only are audio streaming services such as Spotify or Sirius XM interested in selling stock, 
+                    but many artists have taken interest in the market as well. 
+                    Artists have decided to sell the rights to their music for their own price and our team at Beats and Blockchains 
+                    is determined to make this process nice and simple for our customers!
+                </p>
+            </div>
+        </div> 
+    </div> 
+</div>

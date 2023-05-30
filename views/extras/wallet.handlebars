@@ -1,0 +1,199 @@
+<header>
+    <nav>
+        <img alt="logo" src="/public/images/Beats_Blockchains.png" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/market">Market</a></li>
+            <li><a href="/wallet">Wallet</a></li>
+            <li><a href="/users/logout">Log Out</a></li>
+        </ul>
+    </nav>
+</header>
+    <h1 id = "greeting">Good {{time}}, {{username}}.</h1>
+    <div id = "sell-song-modal">
+        <div id = "song-modal-content">
+            <span class = "close">&times;</span>
+            <h2 class = "modal-header"></h2>
+            <p class = "modal-info"></p>
+            <h3 class = "status"></h3>
+            <p class = "instruction"></p>
+            <div id = "selection-buttons">
+                <button class = "sell-song-button confirm-yes ">Yup, sell it!</button>
+                <button class = "sell-song-button confirm-no">Nevermind</button>
+            </div>
+        </div>
+    </div>
+    <div id = "sell-stock-modal">
+        <div id = "stock-modal-content">
+            <span class = "close">&times;</span>
+            <h2 class = "modal-header"></h2>
+            <p class = "modal-info"></p>
+            <h3 class = "status"></h3>
+            <p class = "instruction"></p>
+            <div id = "stock-sell-panel">
+                <form id = "stock-sell-form">
+                    <div>
+                        <label for="stock-box">Shares</label>
+                        <input id="stock-box" type="number" name="balloons" min="1" required>
+                        <span class="validity"></span>
+                    </div>
+                    <div class = "confirm-div">
+                        <input id = "stock-confirm" type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class = "grid-container">
+        <div class = "asset-graph">
+            <h1 id = "total-asset">${{assets}}</h1>
+            {{#if profit}}
+                <p id="asset-status">You're up ${{pnl}} today! ({{total_ret}}%)</p>
+            {{else}}
+                <p id="asset-status">You're down ${{pnl}} today! ({{total_ret}}%)</p>
+            {{/if}}
+            <div id = "chartDiv">
+                <canvas id="myChart"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <div class = "owned-songs">
+                <div class = "carousel">
+                    <table class = "song-carousel">
+                        <thead class = "song-header">
+                            <tr class = "e">
+                                <th>Songs Owned </th>
+                                <th>Date Purchased</th>
+                                <th class = "c-value">Current Value</th>
+                                <th></th> {{!-- column for sell buttons --}}
+                            </tr>
+                        </thead>
+                        {{#if songs}}
+                            {{#each songs}}
+                            <tr class= "song-entry">
+                                <td class = "song-cell">
+                                    <img
+                                    class = "covers" 
+                                    src = "{{image}}"
+                                    alt = "Cover of {{name}} by {{artist}}">
+                                    <p class = "song-name">{{name}}</p>
+                                    <p class = "artist">{{artist}}</p>
+                                </td>
+                                <td>{{date}}</td>
+                                <td class = "c-value">${{price}}</td>
+                                <td>
+                                    <button songId="{{_id}}" class="sell-song-button">Sell</button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        {{else}}
+                            <tr class= "song-entry">
+                                 <td class = "song-cell">
+                                    <h2>No songs purchased.</h2>
+                                </td>
+                            </tr>
+                        {{/if}}
+                    </table>
+                </div>  
+            </div>
+            <div>
+                <form id="add-balance-form" method="POST" action="/wallet/add_balance">
+                    <p id="add-balance-alert" hidden></p>
+                    <label for = "add-balance-amt">Add Balance:</label>
+                     <input id="add-balance-amt" type="number" placeholder="Enter $ Amount" required>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+
+        <div class = "sidebar">
+            <h3 class = "sb-headers"> Wallet</h3>
+            <hr class = "div-line">
+            <table class = "summary">
+                <tr class = "wallet-row">
+                    <td>Total Assets</td>
+                    <td id="total-assets" class = "money-sum">${{assets}}</td>
+                </tr>
+                <tr>
+                    <td>Buying Power</td>
+                    <td id="buying-power" class = "money-sum">${{balance}}</td>
+                </tr>
+            </table>
+            <h3 class = "sb-headers">Shares</h3>
+            <hr>
+            <table class = "stock-summary">
+               {{#if stocks.length }}
+                    {{#each stocks}}
+                        <tr class = "wallet-row">
+                            <td>
+                                <div class = "industry-mini">
+                                    <img
+                                    class = "share-logo" 
+                                    alt = "{{name}} Logo"
+                                    src = "/public/images/stocks/{{symbol}}.png">
+                                    <p class = "symbol">{{symbol}}</p>
+                                </div>
+                                 <p>{{return}}%</p>
+                            </td>
+                            <td>
+                                <p data-shares = "{{shares}}" class = "rt-additional">Shares: {{shares}}</p>
+                                <button id="{{_id}}" class="sell-stock-button">Sell</button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                    {{else}}
+                        <tr class = "wallet-row">
+                            <td>
+                                <h3 id = "no-tra">No stocks invested for this account.</h3>
+                                <h4 id = "no-tra">Head to the Market to start investing!</h4>
+                            </td>
+                        </tr>
+                {{/if}}
+            </table>
+            <h3 class = "sb-headers">Recent Transactions</h3>
+            <hr>
+            <table class = "stock-summary">
+                {{#if transactions}}
+                    {{#each transactions}}
+                        {{#if type}}
+                            <tr class = "wallet-row">
+                                <td>
+                                    <div class = "industry-mini">
+                                        <img
+                                        class = "share-logo" 
+                                        alt = "{{name}} Logo"
+                                        src = "/public/images/stocks/{{symbol}}.png">
+                                        <p>{{symbol}}</p>
+                                    </div>
+                                    <p class = "action">{{pos}}</p>
+                                </td>
+                                <td>
+                                    <p class = "rt-additional">Shares: {{shares}}</p>
+                                    <p class = "change">${{price}}</p>
+                                </td>
+                            </tr>
+                        {{else}}
+                            <tr class = "wallet-row">
+                                <td>
+                                    <p class = "rt-song-name">{{name}}</p>
+                                    <p class = "action">{{pos}}</p>
+                                </td>
+                                <td>
+                                    <p class = "rt-additional">{{artist}}</p>
+                                    <p class = "change">${{price}}</p>
+                                </td>
+                            </tr>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    <tr class = "wallet-row">
+                        <td>
+                            <h3 id = "no-tra">No transactions on this account</h3>
+                            <h4 id = "no-tra">Head to the Market to start investing!</h4>
+                        </td>
+                    </tr>
+                {{/if}}
+            </table>
+        </div>
+    </div>
+    <script src = "/public/js/portfolio.js"></script>
+    <script src = "/public/js/wallet.js"></script>

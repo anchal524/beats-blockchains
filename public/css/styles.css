@@ -1,0 +1,667 @@
+/* Template */
+header ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+header li {
+    display: inline;
+    padding: 14px 16px;
+}
+
+header li a {
+    text-decoration: none;
+    color: #00578c;
+}
+
+header {
+    background-color: #6fdd8e;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    background-color: black;
+    height: 5px;
+    width: 100%;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: auto;
+}
+
+#corner-balance {
+    position: absolute;
+    left: 88%;
+    top: 15px;
+    height: 50px;
+    width: auto;
+    color: #4d4d4d
+}
+
+#market-industries-img {
+    height: 500px;
+    width: auto;
+}
+#market-musicRights-img {
+    height: 500px;
+    width: auto;
+}
+
+/* Wallet CSS starts here */
+
+.money-sum {
+    text-align: right;
+}
+
+#greeting {
+    margin-top: 50px;
+    font-weight: normal;
+    font-size: 30pt;
+}
+
+#total-asset {
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#asset-status {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.grid-container {
+    margin-top: 75px;
+    display: grid;
+    grid-gap: 90px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1090px auto;
+    justify-items: stretch;
+}
+
+.asset-graph {
+    justify-self: end;
+}
+
+.sidebar {
+    position: sticky;
+    top: 50px;
+    justify-self: start;
+    border-style: solid;
+    border-color: #e3e9ed;
+    width: 350px;
+    /* overflow-x: hidden; */
+    padding-top: 15px;
+    /* margin-top: 50px; */
+}
+
+.summary {
+    text-align: left;
+    padding: 15px;
+    width: 350px;
+    border-spacing: 0 8px;
+}
+
+.stock-summary {
+    text-align: left;
+    padding: 0 20px 0 20px;
+    width: 350px;
+    border-spacing: 0 30px;
+}
+
+.sb-headers {
+    text-align: left;
+    padding: 12px 7px 10px 15px;
+}
+
+.share-logo {
+    width: 10%;
+    margin-right: 5px;
+}
+
+.industry-mini {
+    display: flex;
+    align-items: center;
+    padding-bottom: 7.5px;
+}
+
+.action {
+    text-transform: uppercase;
+    color: #78785e
+}
+
+#no-tra {
+    text-align: center;
+}
+
+.rt-song-name {
+    font-weight: bold;
+    padding-bottom: 7.5px;
+}
+
+.rt-additional {
+    float: right;
+    text-align: right;
+    margin-bottom: 7.5px;
+    width: 150px;
+}
+
+.change {
+    color: green;
+    margin-top: 25.5px;
+    text-align: right;
+}
+
+.sell-stock-button {
+    border: solid 1.2px black;
+    color: black;
+    padding: 3px 8.75px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10pt;
+    background-color: white;
+    margin-top: 2px;
+    float: right;
+    cursor: pointer
+}
+
+.sell-song-button,
+.stock-confirm {
+    border: solid 1.2px black;
+    color: black;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10pt;
+    background-color: white;
+    float: right;
+    cursor: pointer
+}
+
+.modal-header,
+.status {
+    margin-top: 7px;
+}
+
+.modal-info,
+.instruction {
+    margin-top: 35px;
+}
+
+.sell-song-button.confirm-no, 
+.sell-song-button.confirm-yes,
+.stock-confirm {
+    float: none;
+    margin: 55px auto
+}
+
+.c-value {
+    text-align: center;
+}
+
+#sell-song-modal,
+#sell-stock-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#song-modal-content,
+#stock-modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 550px;
+    height: 200px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Owned songs CSS begins */
+
+.owned-songs h1 {
+    text-align: left;
+    margin-top: 100px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.covers {
+    max-width: 13%;
+    height: auto;
+    float: left;
+}
+
+.song-name {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 80px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.song-carousel {
+    width: 900px;
+    border-collapse: separate;
+    margin-top: 35px;
+    border-spacing: 0px 25px;
+}
+
+.song-entry {
+    text-align: left;
+}
+
+.song-header th {
+    height: 45px;
+    border-bottom: 1px solid gray;
+}
+
+.e {
+    text-align: left;
+}
+
+.artist {
+    margin-left: 80px;
+    text-align: left;
+    font-size: 18px;
+}
+
+/* Owned songs CSS Ends */
+
+/* Wallet CSS ends here */
+
+/* Login/Signup CSS starts here */
+
+.login-and-signup > label {
+    display: block;
+    margin: 10px;
+}
+
+.login-and-signup > [type='submit'] {
+    background: #6fdd8e;
+    padding: 5px;
+}
+
+/* Login/Signup CSS ends here */
+
+body {
+    text-align: center;
+}
+
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.figures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+figure {
+    height: 570px;
+    width: 475px;
+    background-color: white;
+    padding-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px black;
+}
+
+.buy-now {
+    font-size: 14px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+/* Home Screen */
+.home-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.buyNow {
+    width: 100%;
+    height: 4em;
+    background: #6fdd8e;
+}
+
+.home-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-rest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 5em;
+    width: 100%;
+}
+
+.quotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 90%;
+    margin: 2%;
+}
+.quote1 {
+    background-color: #6fdd8e;
+    height: 100%;
+    width: 100%;
+}
+.quote2 {
+    background-color: #6fdd8e;
+    height: 100%;
+    width: 100%;
+}
+
+.thin-line {
+    background-color: black;
+    height: 1px;
+    width: 100%;
+}
+
+.black-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #000000;
+}
+
+.description {
+    margin: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    height: 50%;
+    background: #6fdd8e;
+}
+
+.desc-text {
+    font-size: 14px;
+}
+
+.table-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2%;
+    border-radius: 3px;
+    border-spacing: 0px;
+}
+
+/* songs css starts here */
+.table-details {
+    table-layout: fixed;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 10%;
+    border-radius: 4px;
+    border-spacing: 0px;
+}
+
+.table-list-row {
+    line-height: 25px;
+}
+
+.table-list-top-header {
+    margin-bottom: 100px;
+}
+
+.table-list-header {
+    line-height: 40px;
+}
+
+/* td,
+th {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 1px solid #090a07;
+    border-left: 1px;
+    border-right: 1px;
+} */
+.table-list-header:hover {
+    cursor: pointer;
+    background: darkolivegreen;
+}
+
+thead.table-list-top-header {
+    background-color: rgb(120, 192, 120);
+}
+.left-column {
+    width: 20%;
+    align-content: left;
+    /* background-color: #c4d8c4; */
+    background-color: rgb(185, 185, 170);
+}
+
+.right-column {
+    align-content: left;
+    background-color: #dddddd;
+}
+
+.clickable-row:nth-child(even) {
+    background-color: rgb(210, 230, 210);
+}
+
+.clickable-row:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+.nav-all-songs {
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 3%;
+    margin-left: -400px;
+    margin-bottom: 50px;
+}
+.buy-songs {
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 3%;
+}
+.songs-description-headings {
+    margin-top: 15px;
+}
+
+.songs-description-values {
+    margin-top: 2px;
+    color: grey;
+}
+
+.songs-description-artist {
+    color: black;
+}
+
+.songs-desc-left {
+    left: 0;
+    background-color: white;
+}
+
+.songs-desc-right {
+    right: 0;
+    background-color: white;
+}
+
+.songs-desc-cover {
+    margin-top: 50px;
+}
+
+.songs-desc-split {
+    height: 80%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    overflow-x: hidden;
+    padding-top: 30px;
+}
+
+.songs-description {
+    text-align: center;
+    color: #6fdd8e;
+    margin-top: 3%;
+}
+/* songs css ends here */
+
+/* Wallet chart css begins here */
+#chartDiv {
+    height: 500px;
+    width: 850px;
+}
+
+/* Wallet chart css ends here */
+
+/* Industry CSS begins here*/
+
+#industry-home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#industry-list ul {
+    list-style: none;
+}
+
+#industry-list ul li {
+    padding-top: 20px;
+    text-decoration: none;
+}
+
+#industry-list ul a:link {
+    text-decoration: none;
+    color: blue;
+}
+#industry-list ul a:visited {
+    text-decoration: none;
+    color: blue;
+}
+#industry-list ul a:hover {
+    text-decoration: none;
+    color: #6fdd8e;
+}
+#industry-list ul a:active {
+    text-decoration: none;
+    color: blue;
+}
+
+#stock-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#stock-info ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+#stock-info ul li {
+    padding-top: 20px;
+}
+
+.tradingview-widget-stock {
+    padding-right: 5px;
+}
+
+#stock-form-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#stock-form-contents * {
+    padding-bottom: 5px;
+}
+
+#myModal{
+    padding-top: 50px;
+}
+
+.modal-backdrop {
+    display: none;
+    z-index: 1040 !important;
+}
+
+.modal-content {
+    margin: 2px auto;
+    z-index: 1100 !important;
+}

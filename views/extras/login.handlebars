@@ -1,0 +1,31 @@
+<header>
+    <nav>
+        <img alt="logo" src="/public/images/Beats_Blockchains.png" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/users/signup">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="line"></div>
+<h1>Log In</h1>
+<div id="login-errors" {{#unless errors.length}}hidden{{/unless}}>
+    <h2>Errors</h2>
+    <ul id="login-error-list">
+        {{#errors}}
+            <li>{{this}}</li>
+        {{/errors}}
+    </ul>
+</div>
+<form id="login-form" method="POST" action="/users/login" class="login-and-signup">
+    <label>
+        Username:
+        <input id="login-username" type="text" name="username" required>
+    </label>
+    <label>
+        Password:
+        <input id="login-password" type="password" name="password" required>
+    </label>
+    <input type="submit" value="Log In">
+</form>
+<script src="/public/js/login.js"></script>

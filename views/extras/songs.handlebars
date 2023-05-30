@@ -1,0 +1,57 @@
+<header>
+    <nav>
+        <img
+            alt="logo"
+            src="/public/images/Beats_Blockchains.png"
+            class="logo"
+        />
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/market">Market</a></li>
+            <li><a href="/wallet">Wallet</a></li>
+            <li><a href="/users/logout">Log Out</a></li>
+        </ul>
+        <p id="corner-balance">Current Balance: {{balance}}</p>
+    </nav>
+</header>
+<main>
+    <h1>Music Rights</h1>
+    <table class="table-list" id="songslist">
+        <thead class="table-list-top-header">
+            <tr>
+                <th id="songname" class="table-list-header">
+                    Name of the song
+                </th>
+                <th id="artist" class="table-list-header">
+                    Artist
+                </th>
+                <th id="lastprice" class="table-list-header">Last Sold Price</th>
+                <th id="currprice" class="table-list-header">
+                    Current Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each songs}}
+                <tr
+                    onclick="window.location='/songs/{{_id}}'"
+                    class="clickable-row"
+                >
+                    <td class="table-list-row">
+                        {{name}}
+                    </td>
+                    <td class="table-list-row">
+                        {{artist}}
+                    </td>
+                    <td class="table-list-row">
+                        {{lastSoldPrice}}
+                    </td>
+                    <td class="table-list-row">
+                        {{price}}
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</main>
+<script src="/public/js/songs.js"></script>

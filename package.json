@@ -1,0 +1,35 @@
+{
+  "name": "cs546-project",
+  "version": "1.0.0",
+  "description": "Final",
+  "main": "app.js",
+  "scripts": {
+    "seed": "node ./tasks/seed.js && node ./tasks/populateIndustry.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinHa48/CS546-Project.git"
+  },
+  "author": "Group 2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinHa48/CS546-Project/issues"
+  },
+  "homepage": "https://github.com/KevinHa48/CS546-Project#readme",
+  "dependencies": {
+    "@khanacademy/tota11y": "^0.2.0",
+    "axios": "^0.24.0",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^3.6.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.15",
+    "qs": "^6.10.1",
+    "xss": "^1.0.10"
+  }
+}

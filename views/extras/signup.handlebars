@@ -1,0 +1,51 @@
+<header>
+    <nav>
+        <img alt="logo" src="/public/images/Beats_Blockchains.png" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/users/login">Log In</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="line"></div>
+<h1>Sign Up</h1>
+<div id="signup-errors" {{#unless errors.length}}hidden{{/unless}}>
+    <h2>Errors</h2>
+    <ul id="signup-error-list">
+        {{#errors}}
+            <li>{{this}}</li>
+        {{/errors}}
+    </ul>
+</div>
+<form id="signup-form" method="POST" action="/users/signup" class="login-and-signup">
+    <label>
+        First Name:
+        <input id="signup-firstname" type="text" name="firstName" value="{{firstName}}" required>
+    </label>
+    <label>
+        Last Name:
+        <input id="signup-lastname" type="text" name="lastName" value="{{lastName}}" required>
+    </label>
+    <label>
+        E-Mail:
+        <input id="signup-email" type="text" name="email" placeholder="example@domain.com" value="{{email}}" required>
+    </label>
+    <label>
+        Age:
+        <input id="signup-age" type="number" name="age" value="{{age}}" required>
+    </label>
+    <label>
+        Username:
+        <input id="signup-username" type="text" name="username" value="{{username}}" required>
+    </label>
+    <label>
+        Password:
+        <input id="signup-password" type="password" name="password" required>
+    </label>
+    <label>
+        Verify Password:
+        <input id="signup-password-copy" type="password" name="passwordCopy" required>
+    </label>
+    <input type="submit" value="Sign Up">
+</form>
+<script src="/public/js/signup.js"></script>

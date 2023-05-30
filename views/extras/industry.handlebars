@@ -1,0 +1,36 @@
+<header>
+    <nav>
+        <img alt="logo" src="/public/images/Beats_Blockchains.png" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/market">Market</a></li>
+            <li><a href="/wallet">Wallet</a></li>
+            <li><a href="/users/logout">Log Out</a></li>
+        </ul>
+        <p id="corner-balance">Current Balance: {{balance}}</p>
+    </nav>
+</header>
+<div id="industry-home">
+    <div id="industry-list">
+    <ul>
+        {{#each industries}}
+           <li><a href="/stock/{{_id}}">Click Here To Purchase {{name}} Stock</a></li>
+        {{/each}}
+    </ul>
+    </div>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget">
+        <script src="https://s3.tradingview.com/tv.js"></script>
+        <script>
+        new TradingView.widget(
+        {
+        "symbol": "SPOT",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "allow_symbol_change": true
+        }
+        );
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+</div>
